@@ -1,0 +1,34 @@
+# Node modules
+node_modules
+/backend/node_modules
+/client/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dist
+dist
+/backend/dist
+/client/dist
+
+# Coverage directory used by tools like istanbul
+coverage
+/backend/coverage
+/client/coverage
+
+# Others
+.DS_Store
+.idea
+.vscode
+.history

@@ -1,4 +1,3 @@
-// src/translation/translation.service.ts
 import { Injectable, Logger } from '@nestjs/common';
 import { RequestLogService } from '../request-log/request-log.service';
 import { HttpTranslationAdapter } from './adapters/http-translation.adapter';

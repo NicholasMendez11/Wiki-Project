@@ -1,4 +1,3 @@
-// src/translation/http-translation.adapter.ts
 import { HttpService } from '@nestjs/axios';
 import {
   Injectable,

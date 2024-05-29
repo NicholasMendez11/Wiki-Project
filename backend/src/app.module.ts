@@ -6,9 +6,6 @@ import { RequestLogModule } from './request-log/request-log.module';
 /*TODO: 
 -Pulish the translation endpoint, add the same amount of validation etc. 
 -Finish to add types to the responses, 
--Would be good to add patron adaptador a las llamadas http
--Necesitamos arreglar los unit testing 
--Necesito integrar los e2e testings
 -Necesito validar que funcione los datos de sqlite 
 -Necesito corregir el problema del contenedor de docker 
 - hacer deploy en railway 

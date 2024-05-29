@@ -1,4 +1,3 @@
-// src/translation/translation.controller.ts
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { TranslationService } from './translation.service';
 import { TranslateContentDto } from './dto/translate-content.dto';

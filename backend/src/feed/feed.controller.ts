@@ -16,6 +16,7 @@ export class FeedController {
   @Get()
   @UsePipes(LowercaseTransformPipe, ValidationPipe)
   getFeaturedContent(@Query() query: GetFeaturedContentDto) {
-    return this.feedService.getFeaturedContent(query.date, query.language);
+    const { date, language, page, limit } = query;
+    return this.feedService.getFeaturedContent(date, language, page, limit);
   }
 }

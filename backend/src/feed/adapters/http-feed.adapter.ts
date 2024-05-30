@@ -7,6 +7,7 @@ import {
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import { AxiosResponse } from 'axios';
+import { Feed } from '../types/feed';
 
 @Injectable()
 export class HttpFeedAdapter {
@@ -14,7 +15,7 @@ export class HttpFeedAdapter {
 
   constructor(private readonly httpService: HttpService) {}
 
-  async getFeaturedContent(date: string, language: string): Promise<any> {
+  async getFeaturedContent(date: string, language: string): Promise<Feed> {
     const [year, month, day] = date.split('-');
     const url = `https://api.wikimedia.org/feed/v1/wikipedia/${language}/featured/${year}/${month}/${day}`;
     this.logger.debug(`Fetching featured content from URL: ${url}`);

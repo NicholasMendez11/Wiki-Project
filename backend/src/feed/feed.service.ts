@@ -24,24 +24,31 @@ export class FeedService {
       date,
       language,
     );
-    const mostread = content.mostread;
+    const onthisday = content.onthisday;
+
+    const news = content.news;
 
     // Pagination
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
-    const paginatedArticles = mostread.articles.slice(startIndex, endIndex);
+    const paginatedEvents = onthisday
+      ? onthisday.slice(startIndex, endIndex)
+      : [];
+    const paginatedNews = news ? news.slice(startIndex, endIndex) : [];
 
     // saving this request
     await this.logRequest(
       '/feed',
       { date, language, page, limit },
-      paginatedArticles,
+      paginatedEvents,
     );
 
     return {
-      date: mostread.date,
-      articles: paginatedArticles,
-      totalArticles: mostread.articles.length,
+      date: date,
+      events: paginatedEvents,
+      news: paginatedNews,
+      totalEvents: onthisday ? Math.ceil(onthisday.length / limit) : 0,
+      totalNews: news ? Math.ceil(news.length / limit) : 0,
     };
   }
 

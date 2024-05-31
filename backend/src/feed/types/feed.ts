@@ -3,8 +3,73 @@ export interface Feed {
   mostread: Mostread;
   image: FeedImage;
   onthisday: Onthisday[];
+  news: News[];
 }
 
+export interface News {
+  links: Link[];
+  story: string;
+}
+export interface Link {
+  type: string;
+  title: string;
+  displaytitle: string;
+  namespace: Namespace2;
+  wikibase_item: string;
+  titles: Titles2;
+  pageid: number;
+  thumbnail?: Thumbnail3;
+  originalimage?: Originalimage2;
+  lang: string;
+  dir: string;
+  revision: string;
+  tid: string;
+  timestamp: string;
+  content_urls: ContentUrls2;
+  extract: string;
+  extract_html: string;
+  normalizedtitle: string;
+  description?: string;
+  description_source?: string;
+  coordinates?: Coordinates2;
+}
+export interface Coordinates2 {
+  lat: number;
+  lon: number;
+}
+export interface Namespace2 {
+  id: number;
+  text: string;
+}
+
+export interface Titles2 {
+  canonical: string;
+  normalized: string;
+  display: string;
+}
+
+export interface Thumbnail3 {
+  source: string;
+  width: number;
+  height: number;
+}
+
+export interface Originalimage2 {
+  source: string;
+  width: number;
+  height: number;
+}
+
+export interface ContentUrls2 {
+  desktop: Desktop;
+  mobile: Mobile;
+}
+export interface Mobile {
+  page: string;
+  revisions: string;
+  edit: string;
+  talk: string;
+}
 export interface FeedImage {
   title: string;
   thumbnail: ThumbnailClass;

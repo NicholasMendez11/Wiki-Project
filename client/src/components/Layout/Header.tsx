@@ -1,6 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import { BsWikipedia } from "react-icons/bs";
 import { HiOutlineMenu } from "react-icons/hi";
+import { GrGithub } from "react-icons/gr";
 
 function Header() {
   return (
@@ -10,17 +11,12 @@ function Header() {
         <span>Wikipedia Featured Content</span>
       </a>
       <nav className="hidden md:flex items-center gap-4">
-        <a className="text-sm font-medium hover:underline" href="#">
-          Home
-        </a>
-        <a className="text-sm font-medium hover:underline" href="#">
-          Featured
-        </a>
-        <a className="text-sm font-medium hover:underline" href="#">
-          Categories
-        </a>
-        <a className="text-sm font-medium hover:underline" href="#">
-          About
+        <a
+          className="text-sm font-medium hover:underline flex items-center gap-2"
+          href="https://github.com/NicholasMendez11/Wiki-Project.git"
+        >
+          <GrGithub />
+          Github Repository
         </a>
       </nav>
       <div className="flex items-center gap-4 md:hidden">

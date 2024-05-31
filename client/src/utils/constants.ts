@@ -1,2 +1,2 @@
 export const ImageNotFound =
-  "https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png";
+  "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg";

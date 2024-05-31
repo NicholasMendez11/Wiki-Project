@@ -4,32 +4,29 @@ import {
   PopoverContent,
   PopoverHandler,
 } from "@material-tailwind/react";
-import { useState } from "react";
-import Calendar from "react-calendar";
+import { useEffect, useState } from "react";
+import DatePicker from "react-date-picker";
 import { MdOutlineCalendarMonth } from "react-icons/md";
-
-type ValuePiece = Date | null;
-
-type Value = ValuePiece | [ValuePiece, ValuePiece];
+import "react-date-picker/dist/DatePicker.css";
+import "react-calendar/dist/Calendar.css";
+import { useFeedStore } from "../../context/feedStore";
+import { formatDateApiCall } from "../../utils/helpers";
 
 export default function DateSelector() {
-  const [value, onChange] = useState<Value>(new Date());
+  const { queryParams, setQueryParams } = useFeedStore();
+  const handleDateChange = (date: any) => {
+    setQueryParams({ date: formatDateApiCall(date) });
+  };
 
+  const today = new Date();
   return (
-    <div>
-      <Popover>
-        <PopoverHandler>
-          <Button
-            className="flex gap-3 text-md items-center py-2 pr-8 justify-between capitalize border-gray-300 shadow-sm  hover:bg-gray-100 transition-all duration-200"
-            variant="outlined"
-          >
-            <MdOutlineCalendarMonth /> Select date range
-          </Button>
-        </PopoverHandler>
-        <PopoverContent className="p-0 ml-3">
-          <Calendar onChange={onChange} value={value} />
-        </PopoverContent>
-      </Popover>
+    <div className="flex flex-col items-center">
+      <DatePicker
+        onChange={handleDateChange}
+        value={queryParams.date}
+        maxDate={today}
+        className="custom-date-picker"
+      />
     </div>
   );
 }

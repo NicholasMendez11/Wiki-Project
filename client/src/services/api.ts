@@ -1,14 +1,14 @@
 import axios, { AxiosResponse } from "axios";
 import { WEB_API_URL, getRequest } from "./helpers";
 import { Feed } from "../types/feed";
+import { FeedQueryParams } from "../types";
 
 export const fetchFeaturedContent = async (
-  date: string,
-  language: string
-  // page: number
+  data: FeedQueryParams
 ): Promise<AxiosResponse<Feed>> => {
+  const { date, language, page, limit } = data;
   return await getRequest<Feed>(
-    `${WEB_API_URL}/feed?date=${date}&language=${language}`
+    `${WEB_API_URL}/feed?date=${date}&language=${language}&page=${page}&limit=${limit}`
   );
 };
 

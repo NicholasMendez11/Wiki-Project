@@ -5,3 +5,35 @@
 .shadow-inner-custom {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.react-date-picker__wrapper {
+  @apply border border-gray-300 rounded-lg p-2 bg-white;
+}
+
+.react-date-picker__inputGroup__input {
+  @apply w-full text-gray-700 focus:outline-none;
+}
+
+.react-date-picker__calendar {
+  @apply mt-2;
+}
+
+.react-date-picker__button svg {
+  @apply w-5 h-5 text-gray-500;
+}
+
+.react-calendar {
+  @apply border border-gray-300 rounded-lg;
+}
+
+.react-calendar__tile--active {
+  @apply bg-blue-500 text-white;
+}
+
+.react-calendar__tile--now {
+  @apply bg-gray-200;
+}
+
+.react-calendar__tile--hover {
+  @apply bg-gray-100;
+}

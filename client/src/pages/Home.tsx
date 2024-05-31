@@ -8,10 +8,12 @@ import Pagination from "../components/Pagination/Pagination";
 
 //todo: Will be better to have the news in another endpoint
 //todo: Sopechosamente todos los events vienen en 3 paginas
-//todo: Infinity scroll
+//todo: Infinity scrollfor the next day
 //todo: testing para el front end
 //todo: Configurar el dockerfile y el docker compose
 //todo: Agregar los links del footer
+//todo: To change the limit by inputs
+//?Capacitor
 
 const Home: React.FC = () => {
   return (

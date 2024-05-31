@@ -9,62 +9,27 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import React from "react";
 import { Modal } from "../common/Modal";
-import DetailView from "../DetailView/DetailView";
 import { Event, News } from "../../types/feed";
 import { ImageNotFound } from "../../utils/constants";
 import { getLastOpenedUrls, isEvent, truncateText } from "../../utils/helpers";
+import DetailView from "../detail-views/DetailView";
+import useEventCard from "../../hooks/useEventCard";
 
 type Props = {
   event: Event | News;
 };
 
 export default function EventCard({ event }: Props) {
-  const [open, setOpen] = React.useState(false);
-  const handleDetails = () => setOpen(!open);
-  let isDocumentViewed: boolean;
-  const urls = getLastOpenedUrls();
-  if (isEvent(event)) {
-    isDocumentViewed = urls.includes(
-      event.pages[0].content_urls.desktop.page as never
-    );
-  } else {
-    isDocumentViewed = urls.includes(
-      event.links[0].content_urls.desktop.page as never
-    );
-  }
-
-  const getImageSource = (): string => {
-    if (isEvent(event)) {
-      return event.pages[0].thumbnail?.source || ImageNotFound;
-    } else {
-      return event.links[0].thumbnail?.source || ImageNotFound;
-    }
-  };
-
-  const getTitle = (): string => {
-    if (isEvent(event)) {
-      return event.pages[0].normalizedtitle;
-    } else {
-      return event.links[0].normalizedtitle;
-    }
-  };
-
-  const getText = (): string => {
-    if (isEvent(event)) {
-      return event.text;
-    } else {
-      return truncateText(event.links[0].extract, 150);
-    }
-  };
-
-  const getYear = (): number | string => {
-    if (isEvent(event)) {
-      return event.year;
-    } else {
-      return new Date(event.links[0].timestamp).getFullYear();
-    }
-  };
-
+  const {
+    handleDetails,
+    getImageSource,
+    getTitle,
+    getText,
+    getYear,
+    setOpen,
+    isDocumentViewed,
+    open,
+  } = useEventCard(event);
   return (
     <>
       <Modal

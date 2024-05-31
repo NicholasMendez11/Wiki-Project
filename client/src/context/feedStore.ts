@@ -17,7 +17,7 @@ export const useFeedStore = create<FeedState>((set) => ({
     date: getCurrentFormattedDate(),
     language: "en",
     page: 1,
-    limit: 5,
+    limit: '5',
   },
   totalArticles: 0,
   totalNews: 0,

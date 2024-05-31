@@ -42,7 +42,10 @@ export function isEvent(event: Event | News): event is Event {
 export const formatDateApiCall = (date: any) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
+  const day =
+    String(date.getDate() + 1).padStart(2, "0") == "32"
+      ? String(date.getDate()).padStart(2, "0")
+      : String(date.getDate() + 1).padStart(2, "0");
   return `${year}-${month}-${day}`;
 };
 
@@ -51,4 +54,24 @@ export const getLastOpenedUrls = (): [] => {
     localStorage.getItem("lastOpenedUrls") || "[]"
   );
   return lastOpenedUrls;
+};
+
+export const handleCheckWikipedia = (event: Event | News) => {
+  let url: string;
+  if (isEvent(event)) {
+    url = event.pages[0].content_urls.desktop.page;
+  } else {
+    url = event.links[0].content_urls.desktop.page;
+  }
+  const newWindow = window.open(url, "_blank");
+
+  const lastOpenedUrls = JSON.parse(
+    localStorage.getItem("lastOpenedUrls") || "[]"
+  );
+
+  if (!lastOpenedUrls.includes(url)) {
+    lastOpenedUrls.push(url);
+  }
+
+  localStorage.setItem("lastOpenedUrls", JSON.stringify(lastOpenedUrls));
 };

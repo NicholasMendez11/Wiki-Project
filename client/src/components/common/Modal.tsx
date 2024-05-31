@@ -14,11 +14,10 @@ type props = {
   title: string;
   children: React.ReactNode;
 };
-export function Modal({ open, handleOpen, title, children }: props) {
+export function Modal({ open, handleOpen, children }: props) {
   return (
     <>
       <Dialog open={open} handler={handleOpen} size="lg">
-        <DialogHeader>{title}</DialogHeader>
         <DialogBody>{children}</DialogBody>
       </Dialog>
     </>

@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { WEB_API_URL, getRequest } from "./helpers";
 import { Feed } from "../types/feed";
 import { FeedQueryParams } from "../types";
+import { TranslationResponse } from "../types/translation";
 
 export const fetchFeaturedContent = async (
   data: FeedQueryParams
@@ -12,11 +13,11 @@ export const fetchFeaturedContent = async (
   );
 };
 
-// export const fetchTranslatedContent = async (
-//   date: string,
-//   language: string,
-//   text: string
-// ) => {
-//   const response = await api.get(`/feed/translate/${language}?text=${text}`);
-//   return response.data;
-// };
+export const fetchTranslatedContent = async (
+  language: string,
+  text: string
+) => {
+  return await getRequest<TranslationResponse>(
+    `${WEB_API_URL}/feed/translate/${language}?text=${text}`
+  );
+};

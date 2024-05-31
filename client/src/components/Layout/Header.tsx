@@ -7,24 +7,18 @@ function Header() {
   return (
     <header className="bg-gray-900 text-white py-4 px-6 md:px-10 flex items-center justify-between">
       <a className="text-2xl font-bold flex items-center gap-2" href="#">
-        <BsWikipedia className="h-6 w-6" />
+        <BsWikipedia className="h-6 w-6 hidden md:block" />
         <span>Wikipedia Featured Content</span>
       </a>
-      <nav className="hidden md:flex items-center gap-4">
+      <nav className=" items-center gap-4">
         <a
-          className="text-sm font-medium hover:underline flex items-center gap-2"
+          className="text-2xl md:text-lg font-medium hover:underline flex items-center gap-2"
           href="https://github.com/NicholasMendez11/Wiki-Project.git"
         >
           <GrGithub />
-          Github Repository
+          <p className="hidden md:block"> Github Repository</p>
         </a>
       </nav>
-      <div className="flex items-center gap-4 md:hidden">
-        <Button className="rounded-full" size="lg" variant="filled">
-          <HiOutlineMenu className="h-6 w-6" />
-          <span className="sr-only">Toggle menu</span>
-        </Button>
-      </div>
     </header>
   );
 }

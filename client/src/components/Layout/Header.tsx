@@ -1,6 +1,4 @@
-import { Button } from "@material-tailwind/react";
 import { BsWikipedia } from "react-icons/bs";
-import { HiOutlineMenu } from "react-icons/hi";
 import { GrGithub } from "react-icons/gr";
 
 function Header() {

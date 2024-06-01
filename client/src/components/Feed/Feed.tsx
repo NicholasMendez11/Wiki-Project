@@ -1,10 +1,10 @@
 import { Event } from "../../types/feed";
-import EventCard from "../card/Card";
 import Loader from "../common/Loader";
 
 import Lottie from "lottie-react";
 import LottieAnimation from "../../assets/notFound.json";
 import useFeed from "../../hooks/useFeed";
+import EventCard from "../Card/Card";
 
 function Feed() {
   const { feed } = useFeed();

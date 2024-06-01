@@ -1,4 +1,4 @@
-import Layout from "./components/layout";
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 
 export default function App() {

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-} from "@material-tailwind/react";
+import { Dialog, DialogBody } from "@material-tailwind/react";
 
 type props = {
   open: boolean;

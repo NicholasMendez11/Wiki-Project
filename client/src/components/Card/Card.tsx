@@ -7,11 +7,8 @@ import {
 } from "@material-tailwind/react";
 import { MdOutlineDateRange } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
-import React from "react";
 import { Modal } from "../common/Modal";
 import { Event, News } from "../../types/feed";
-import { ImageNotFound } from "../../utils/constants";
-import { getLastOpenedUrls, isEvent, truncateText } from "../../utils/helpers";
 import DetailView from "../detail-views/DetailView";
 import useEventCard from "../../hooks/useEventCard";
 

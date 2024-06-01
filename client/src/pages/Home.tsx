@@ -1,10 +1,11 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import { CountriesSelect } from "../components/selectors/LanguageSelector";
-import Feed from "../components/feed/Feed";
-import Pagination from "../components/pagination/Pagination";
+
 import DateSelector from "../components/selectors/DateSelector";
 import { LimitSelector } from "../components/selectors/LimitSelector";
+import Pagination from "../components/Pagination/Pagination";
+import Feed from "../components/Feed/Feed";
 
 const Home: React.FC = () => {
   return (

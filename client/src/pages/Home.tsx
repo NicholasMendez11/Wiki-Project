@@ -6,9 +6,6 @@ import Pagination from "../components/pagination/Pagination";
 import DateSelector from "../components/selectors/DateSelector";
 import { LimitSelector } from "../components/selectors/LimitSelector";
 
-//todo: Configurar el dockerfile y el docker compose
-//?Capacitor 100pts
-
 const Home: React.FC = () => {
   return (
     <div className="w-screen h-full p-4 bg-gray-100">

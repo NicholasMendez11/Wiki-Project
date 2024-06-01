@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 COPY package*.json ./
 
 # Instalar dependencias de npm con --legacy-peer-deps para evitar conflictos de dependencias
-RUN npm install --legacy-peer-deps
+RUN npm install 
 
 COPY . .
 

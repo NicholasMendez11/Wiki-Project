@@ -64,7 +64,7 @@
 - [Contact](#contact)
 - [Assumptions and Limitations](#assumptions-and-limitations)
   - [Lack of time](#lack-of-time)
-  - [Migration to PostgreSQL from SQLite3](#migration-to-postgresql-from-sqlite3)
+  - [Running PostgreSQL locally](#migration-to-postgresql-from-sqlite3)
   - [Uses of ENV variables](#uses-of-env-variables)
   - [Wikipedia API or Synchronization issues](#wikipedia-api-or-synchronization-issues)
   - [Languages and UI limitations](#languages-and-ui-limitations)
@@ -430,7 +430,9 @@ Due to other responsibilities, I did not have much time to work fully on the pro
 
 Initially, for the backend, I used an SQLite3 database along with the NestJS project. However, I encountered many issues when installing it in the Docker container. At the last minute, I had to migrate to a PostgreSQL database. This database worked well, but I did not have enough time to test it thoroughly.
 
-After migrating to the new database, I noticed that TypeORM did not connect to the PostgreSQL database when testing the backend locally. However, it connected without issues when running the project in the Docker container using `docker-compose up`. This leads me to assume that the error might be related to how SQL is configured on my machine.
+After migrating to the new database, As we are using a PostgreSQL database, if you plan to run the project locally, you will need to install and configure the PostgreSQL database on your machine. This will allow you to test the backend locally and ensure that it is working correctly.
+
+Otherwise I will recommend run the project in the Docker container using `docker-compose up`. as this container will have the PostgreSQL database already installed and configured.
 
 ## Wikipedia API or Synchronization issues
 

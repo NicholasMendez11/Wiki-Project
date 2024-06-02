@@ -65,6 +65,7 @@
 - [Assumptions and Limitations](#assumptions-and-limitations)
   - [Lack of time](#lack-of-time)
   - [Migration to PostgreSQL from SQLite3](#migration-to-postgresql-from-sqlite3)
+  - [Uses of ENV variables](#uses-of-env-variables)
   - [Wikipedia API or Synchronization issues](#wikipedia-api-or-synchronization-issues)
   - [Languages and UI limitations](#languages-and-ui-limitations)
   - [Capacitor](#capacitor)
@@ -429,7 +430,7 @@ Due to other responsibilities, I did not have much time to work fully on the pro
 
 Initially, for the backend, I used an SQLite3 database along with the NestJS project. However, I encountered many issues when installing it in the Docker container. At the last minute, I had to migrate to a PostgreSQL database. This database worked well, but I did not have enough time to test it thoroughly.
 
-After migrating to the new database, I noticed that TypeORM did not connect to the PostgreSQL database when testing the backend locally. However, it connected without issues when running the project in the Docker container using docker-compose up. This leads me to assume that the error might be related to how SQL is configured on my machine.
+After migrating to the new database, I noticed that TypeORM did not connect to the PostgreSQL database when testing the backend locally. However, it connected without issues when running the project in the Docker container using `docker-compose up`. This leads me to assume that the error might be related to how SQL is configured on my machine.
 
 ## Wikipedia API or Synchronization issues
 
@@ -448,6 +449,12 @@ Capacitor is a new tool I learned to use while preparing this project. My experi
 ## LibreTranslate API is not free anymore
 
 I used the LibreTranslate API to translate the titles and extracts to the specified language using the LibreTranslate API. This API is not a free service, so I had to subscribe to a plan to use it. So I will appreciate if after the project is reviewed, you could let me know so I can turn of the subscription.
+
+## Uses of ENV variables
+
+I did not use ENV variables in the project, I understand that it is a good practice to use them, but I did not have the time to implement them and as per the last minute configuration I did on the database I did not have enough time to do it.
+
+But I want to highlight that I'm aware of the importance of using ENV variables in the project, and I'm happy to discuss the best practices for using them in a project like this.
 
 # I'm ready for whatever challenges!
 
